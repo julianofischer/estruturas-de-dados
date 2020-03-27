@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Estruturas de Dados Não Lineares</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style>
+			.reveal section img { background:none; border:none; box-shadow:none; }
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Estruturas de Dados Não Lineares</h1>
+					<h3>Prof. Juliano Fischer Naves</h3>
+					<!--<p>
+						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
+					</p>-->
+				</section>
+
+				<section>
+					<h2>Estruturas de Dados Lineares</h2>
+					<h4 style="color:red;font-weight: bold;">Possuem apenas um sucessor e um predecessor</h4>
+					<blockquote>Ex: Listas simplesmente encadeadas, listas duplamente encadeadas, filas, pilhas ...</blockquote>
+				</section>
+
+				<section>
+					<h3>Lista simplesmente encadeada</h3>
+					<p><img src="imagens/lse-1.png" ></p>
+					<ul>
+						<li class="fragment">52 é predecessor de 9; 50 é sucessor de 9.</li>
+						<li class="fragment">52 é sucessor de 12; 12 não possui predecessor.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Lista circular duplamente encadeada</h3>
+					<p><img src="imagens/lcde-1.png" class="plain"></p>
+					<ul>
+						<li class="fragment">50 é predecessor de 1; 12 é sucessor de 1.</li>
+						<li class="fragment">42 é sucessor de 12; 1 é predecessor de 12.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Estruturas de dados não lineares</h2>
+					<ul>
+						<li class="fragment">Árvore</li>
+						<li class="fragment">Árvore binária</li>
+						<li class="fragment">Árvore binária de busca</li>
+						<li class="fragment">Heap</li>
+						<li class="fragment">Grafo</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Árvore</h3>
+					<div style="display: flex; flex-direction: row; justify-content: center;">
+						<div>
+							<ul>
+								<li>Utilizada em muitas aplicações</li>
+								<li>Um modelo hierárquico</li>
+								<ul>
+									<li>árvore genealógica</li>
+									<li>organograma de uma organização</li>
+								</ul>
+								<li>Conceito diretamente ligado a <b style="color: red;">recursão</b></li>
+							</ul>
+						</div>
+
+						<div>
+							<img src="imagens/tree-1.png">
+						</div>
+					</div>
+				</section>
+
+
+				<section>
+					<h3>Árvore</h3>
+					<div style="display: flex; flex-direction: row; justify-content: center;">
+						<div>
+							<ul>
+								<li>Um conjunto finito de elementos</li>
+								<ul>
+									<li>cada elemento é chamado de nó ou vértice da árvore</li>
+									<li>arcos ou arestas ligam os nós</li>
+								</ul>
+								<li>Um nó é chamado de raíz</li>
+								<li>Nós sem filhos são chamados de folhas</li>
+							</ul>
+						</div>
+						<div>
+							<img src="imagens/tree-1.png">
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>Árvore</h3>
+					<div style="display: flex; flex-direction: row; justify-content: center;">
+						<div>
+							<ul>
+								<li>Os filhos de um nó são raízes de subconjuntos que são chamados de <b>subárvores</b></li>
+								<ul>
+									<li>Na imagem, destacamos 3 subárvores</li>
+									<li>As subárvores cujos nós B e C são raízes, são subárvores de A</li>
+									<li>Por sua vez, G é a raíz de uma subárvore de C que só possui um nó, ele mesmo</li>
+								</ul>
+							</ul>
+						</div>
+						<div>
+							<img src="imagens/subtree.png">
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>Árvore Binária</h3>
+					<div style="display: flex; flex-direction: row; justify-content: center;">
+						<div>
+							<ul>
+								<li>Um tipo especial de árvore</li>
+								<ul>
+									<li>Cada nó pode ter no máximo 2 filhos</li>
+									<li>Filho da esquerda e filho da direita</li>
+								</ul>
+							</ul>
+						</div>
+						<div>
+							<img src="imagens/binary-tree.png">
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>Árvore Binária</h3>
+					<div style="display: flex; flex-direction: row; justify-content: center;">
+						<div>
+							<ul>
+								<li>A subárvore cuja raíz é o nó à esquerda de X, é denominada <mark>subárvore à esquerda</mark> de X</li>
+								<li>A subárvore cuja raíz é o nó à direita de X, é denominada <mark>subárvore à direita</mark> de X</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>Árvore Binária</h3>
+					<div style="display: flex; flex-direction: row; justify-content: center;">
+						<div>
+							<h4><mark>Subárvore à esquerda de 2</mark></h4>
+						</div>
+
+						<div>
+							<img src="imagens/left-subtree.png" width="80%">
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>Árvore Binária</h3>
+					<div style="display: flex; flex-direction: row; justify-content: center;">
+						<div>
+							<h4><mark>Subárvore à direita de 2</mark></h4>
+						</div>
+
+						<div>
+							<img src="imagens/right-subtree.png" width="80%">
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>Árvore Binária</h3>
+					<div style="display: flex; flex-direction: row; justify-content: center;">
+						<div>
+							<h4><mark>Subárvore à direita de 7</mark></h4>
+						</div>
+
+						<div>
+							<img src="imagens/right-subtree-2.png" width="80%">
+						</div>
+					</div>
+				</section>
+
+
+				<section>
+					<h3>Árvore Binária de Busca</h3>
+					<div style="display: flex; flex-direction: row; justify-content: center;">
+						<div>
+							<ul>
+								<li>Um tipo especial de árvore binária</li>
+								<ul>
+									<li>Todos os nós na subárvores à esquerda de um nó X, são menores que o nó X</li>
+									<li>Todos os nós na subárvores à direita de um nó X, são maiores que o nó X</li>
+								</ul>
+								<li>Um novo nó sempre é inserido como folha</li>
+								<li>Permite a busca rápida através da busca binária</li>
+							</ul>
+						</div>
+						<div>
+							<img src="imagens/bstree.png">
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>Árvore Binária de Busca</h3>
+					<img src="imagens/bstree.png">
+				</section>
+
+				<section>
+					<h3>Heap</h3>
+					<p><mark>É um tipo especializado de árvore que satisfaz a seguinte propriedade: se P é um nó pai de C, 
+						então a chave (valor) de P é maior (em um heap de máximo) ou menor (em um heap de mínimo) que a chave de C.</mark></p>
+						<p>
+							Aplicações: algoritmos que precisam recuperar rapidamente um dado de maior prioridade: filas de prioridade.
+						</p>
+				</section>
+
+				<section>
+					<h3>Heap de Máximo</h3>
+					<img src="imagens/max-heap.png" width="80%">
+				</section>
+
+				<section>
+					<h3>Heap de Mínimo</h3>
+					<img src="imagens/min-heap.png" width="80%">
+				</section>
+
+				<section>
+					<h3>Grafo</h3>
+					<p><mark>É uma estrutura de dados composta por um conjunto finito de nós (ou vértices) e um conjunto finito de arestas (ou arcos).</mark></p>
+						<p>
+							<img src="imagens/graph-1.png" width="60%">
+						</p>
+				</section>
+
+				<section>
+					<h3>Grafo Dirigidos/Não Dirigidos</h3>
+					<p>
+						<img src="imagens/graph-2.png" width="60%">
+					</p>
+				</section>
+
+				<section>
+					<h3>Grafo - Rede Social</h3>
+					<p>
+						<img src="imagens/social-network.png" width="60%">
+					</p>
+				</section>
+
+				<section>
+					<h3>Grafo - Chamadas de Procedimentos</h3>
+					<p>
+						<img src="imagens/graph-calls.gif" width="60%">
+					</p>
+				</section>
+
+				<section>
+					<h3>Grafo - Cidades</h3>
+					<p>
+						<img src="imagens/graph-cities.gif" width="60%">
+					</p>
+				</section>
+
+				<section>
+					<h3>Grafo - Páginas Web</h3>
+					<p>
+						<img src="imagens/graph-webpage.gif" width="60%">
+					</p>
+				</section>
+
+				<section>
+					<h3>Grafo - Como representar?</h3>
+					<p><mark>Matriz de adjacência, lista de arestas, lista de adjacência e referência</mark></p>
+					<p>
+						<img src="imagens/graph-matrix.png" width="60%">
+					</p>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>FIM</h1>
+					<p class="fragment">
+						- por enquanto.
+					</p>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,19 @@
+digraph {
+  graph[pencolor=transparent];
+  rankdir=LR;
+  node[shape=record];
+  p1[label="{<data> 12|<next>}"];
+  p2[label="{<data> 99|<next>}"];
+  p3[label="{<data> 37|<next>}"];
+  p4[label="{<data> 65|<next>}"];
+  p5[label="{<data> 42|<next>}"];
+  pfim[shape=plain, label="null"];
+
+  edge[tailclip=false,arrowtail=dot,dir=both];
+
+  p1:next:c -> p2:data;
+  p2:next:c -> p3:data;
+  p3:next:c -> p4:data;
+  p4:next:c -> p5:data;
+  p5:next:c -> pfim;
+}
